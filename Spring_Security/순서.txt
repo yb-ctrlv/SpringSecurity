@@ -1,0 +1,35 @@
+1. web.xml 2.5 -> 4.0 (dynamic web project 만들어서)
+2. pom.xml	- java 1.6 -> 1.8
+			- springframework 3.1.1 -> 4
+			- servlet api 2.5 -> 4.0.1 && artifactId servlet-api -> javax.servlet-api
+			- jsp-api 2.1 -> 2.3.3 && artifactId jsp-api -> javax.servlet.jsp-api
+			- maven-compiler-plugin source/target 1.6 -> 1.8
+3. project(properties) facet - java 1.6 -> 1.8
+				 - web-module 2.5-> 4.0
+4. maven update!
+-------------------------(mybatis)
+1. pom.xml - ojdbc6, mybatis, mybatis-spring, commons-dbcp, spring-orm
+2. web.xml - servlet-mapping : url-pattern encodingFilter
+3. WEB-INF/spring/sqls/test.sql
+4. dto, dao, biz
+5. src/main/resources/sqls/mapper.xml
+6. WEB-INF/spring/sqls/config.xml
+7. src/main/resources/properties/db.properties
+8. applicationContext.xml
+-------------------------(AOP)
+9. pom.xml - org.aspectj/aspectjweaver, aspectjrt
+10. com.mvc.hello.common.aop/LogAop.java 생성
+11. aop-context.xml
+12. web.xml
+13. src/main/resources/log4j.xml (package 추가, root logger 를 trace)
+------------------------(filter)
+14.pom.xml - commons.lang3
+15.com.mvc.hello.common.filter/LogFilter.java(javax.servlet.Filter)
+16.web.xml
+-----------------------------(transaction)
+20.dao, biz, controller
+21. applicationContext(DataSourceTransactionManager - bean)
+22.servlet-context.xml(<tx:annotation-driven>)
+-------------------------------(interceptor)
+23.com.mvc.hello.common.interceptor / LoginInterceptor (impl HandlerInterceptor)
+24.servlet-context.xml
